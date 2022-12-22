@@ -26,5 +26,7 @@ int or_sh(char **args);
 int var_rep(char **args);
 int _setenv(const char *name, const char *value, int overwrite);
 int _putenv(char *string);
+char **_getenv(const char *name);
+char *_strcpy(char *dst, const char *src);
 
 #endif

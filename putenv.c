@@ -16,7 +16,7 @@ int _putenv(char *string)
 
 	if (name == NULL || value == NULL)
 		return (-1);
-	existing = getenv(name);
+	existing = _getenv(name);
 	if (existing == NULL)
 	{
 		new_env_var = malloc(sizeof(char) * (_strlen(string) + 1));
