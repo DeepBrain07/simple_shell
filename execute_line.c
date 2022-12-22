@@ -9,14 +9,10 @@
 int execute_line(char **args)
 {
 	int i;
-	char *builtins[] = {"cd", "exit"};
+/*	char *builtins[] = {"cd", "exit"};
 
-	int (*builtin_func[]) (char **) = {&cd, &exit_process};
+	int (*builtin_func[]) (char **) = {&cd, &exit_process}; */
 
-	int num_of_builtins(void)
-	{
-		return (sizeof(builtins) / sizeof(char *));
-	}
 
 	if (args[0] == NULL)
 		return (1);
@@ -26,6 +22,10 @@ int execute_line(char **args)
 			return (set_env(args));
 		else if (_strcmp(args[0], "unsetenv") == 0)
 			return (unset_env(args));
+		else if (_strcmp(args[0], "cd") == 0)
+			return (cd(args));
+		else if (_strcmp(args[0], "exit") == 0)
+			return (exit_process(args));
 		else if (args[i][0] == '$')
 			return (var_rep(args));
 		else if (i != 0 && _strcmp(args[i], "&&") == 0)
@@ -33,8 +33,8 @@ int execute_line(char **args)
 		else if (i != 0 && _strcmp(args[i], "||") == 0)
 			return (or_sh(args));
 	}
-	for (i = 0; i < num_of_builtins(); i++)
+/*	for (i = 0; i < num_of_builtins(); i++)
 		if (_strcmp(args[0], builtins[i]) == 0)
-			return ((*builtin_func[i])(args));
+			return ((*builtin_func[i])(args));*/
 	return (start_process(args));
 }

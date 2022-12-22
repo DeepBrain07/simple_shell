@@ -8,14 +8,13 @@
 
 int cd(char **args)
 {
-	int i, status, ret;
+	int status;
 	char *oldpwd = _getenv("OLDPWD");
 	char cwd[1024];
 
 	if (args[1] == NULL)
 	{
 		getcwd(cwd, 1024);
-		ret = _setenv("OLDPWD", cwd, 1);
 		status = chdir(_getenv("HOME"));
 	}
 	else
@@ -34,13 +33,11 @@ int cd(char **args)
 		else if (_strcmp("~", args[1]) == 0 || _strcmp("$HOME", args[1]) == 0)
 		{
 			getcwd(cwd, 1024);
-			ret = _setenv("OLDPWD", cwd, 1);
 			status = chdir(_getenv("HOME"));
 		}
 		else
 		{
 			getcwd(cwd, 1024);
-			ret = setenv("OLDPWD", cwd, 1);
 			status = chdir(args[1]);
 		}
 	}
