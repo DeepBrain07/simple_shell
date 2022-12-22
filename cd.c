@@ -29,7 +29,7 @@ int cd(char **args)
 			}
 			status = chdir(oldpwd);
 			write(1, oldpwd, _strlen(oldpwd));
-			write(1, '\n', 1);
+			_putchar('\n');
 		}
 		else if (_strcmp("~", args[1]) == 0 || _strcmp("$HOME", args[1]) == 0)
 		{

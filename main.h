@@ -10,7 +10,7 @@
 #include <ctype.h>
 
 int _strcmp(const char *s1, const char *s2);
-char *_which(const char *);
+char *_which(const char *command);
 char *read_line(void);
 void loop(void);
 char **split_line(char *str);

@@ -40,7 +40,6 @@ int var_rep(char **args)
 			else
 				token[i] = args[i];
 		}
-		free(buf3);
 		return (start_process(token));
 	}
 	return (1);

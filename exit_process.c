@@ -13,5 +13,5 @@ int exit_process(char **args)
 		status = _atoi(args[1]);
 	else
 		status = 0;
-	_exit(status);
+	_exit(status - 1);
 }
