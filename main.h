@@ -7,10 +7,9 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <string.h>
-#include <libgen.h>
 
 int _strcmp(const char *s1, const char *s2);
-char *which(const char *);
+char *_which(const char *);
 char *read_line(void);
 void loop(void);
 char **split_line(char *str);
@@ -25,5 +24,7 @@ int unset_env(char **args);
 int and_sh(char **args);
 int or_sh(char **args);
 int var_rep(char **args);
+int _setenv(const char *name, const char *value, int overwrite);
+int _putenv(char *string);
 
 #endif
