@@ -33,5 +33,6 @@ int _atoi(const char *str);
 int _strlen(const char *str);
 char *_strcat(char *dest, const char *src);
 char *_strdup(const char *src);
+int _unsetenv(const char *name);
 
 #endif
