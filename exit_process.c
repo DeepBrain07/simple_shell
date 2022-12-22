@@ -7,10 +7,10 @@
 */
 int exit_process(char **args)
 {
-	int status;
+	int i, status;
 
 	if (args[1])
-		status = _atoi(args[i]);
+		status = _atoi(args[1]);
 	else
 		status = 0;
 	_exit(status);

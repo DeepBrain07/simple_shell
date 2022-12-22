@@ -27,7 +27,7 @@ int _putenv(char *string)
 	}
 	else
 	{
-		existing = _realloc(existing, strlen(string) + 1);
+		existing = realloc(existing, strlen(string) + 1);
 		if (existing == NULL)
 			return (-1);
 		_strcpy(existing, string);

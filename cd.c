@@ -24,14 +24,15 @@ int cd(char **args)
 		{
 			if (oldpwd == NULL)
 			{
-				write(2, "%s", "OLDPWD not set\n");
+				write(2, "OLDPWD not set\n", 15);
 				exit(EXIT_FAILURE);
 			}
 			status = chdir(oldpwd);
-			write(1, "%s", oldpwd);
+			write(1, oldpwd, _strlen(oldpwd));
+			write(1, '\n', 1);
 		}
 		else if (_strcmp("~", args[1]) == 0 || _strcmp("$HOME", args[1]) == 0)
-		}
+		{
 			getcwd(cwd, 1024);
 			ret = _setenv("OLDPWD", cwd, 1);
 			status = chdir(_getenv("HOME"));

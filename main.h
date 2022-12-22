@@ -27,12 +27,13 @@ int or_sh(char **args);
 int var_rep(char **args);
 int _setenv(const char *name, const char *value, int overwrite);
 int _putenv(char *string);
-char **_getenv(const char *name);
+char *_getenv(const char *name);
 char *_strcpy(char *dst, const char *src);
 int _atoi(const char *str);
 int _strlen(const char *str);
 char *_strcat(char *dest, const char *src);
 char *_strdup(const char *src);
 int _unsetenv(const char *name);
+int _putchar(int c);
 
 #endif

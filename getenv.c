@@ -8,7 +8,7 @@
 
 extern char **environ;
 
-char **_getenv(const char *name)
+char *_getenv(const char *name)
 {
 	int i;
 

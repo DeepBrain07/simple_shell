@@ -13,7 +13,7 @@ int and_sh(char **args)
 
 	if (buf == NULL)
 	{
-		write(2, "%s\n", "Unable to allocate space");
+		write(2, "Unable to allocate space", 25);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; args[i]; i++)
@@ -38,7 +38,7 @@ int and_sh(char **args)
 			position++;
 		}
 	}
-	buf[positiom] = NULL;
+	buf[position] = NULL;
 	start_process(buf);
 	free(buf);
 

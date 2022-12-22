@@ -8,7 +8,7 @@
 */
 char *_strtok(char *str, const char *delim)
 {
-	char start;
+	char *start;
 	static char *curr = NULL;
 
 	if (str != NULL)

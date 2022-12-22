@@ -12,9 +12,9 @@ int unset_env(char **args)
 	status = _unsetenv(args[1]);
 	if (status != 0)
 	{
-		write(2, "%s\n", "Unable to unset environment variable\n");
+		write(2, "Unable to unset environment variable\n", 25);
 		exit(EXIT_FAILURE);
-	{
+	}
 
 	return (1);
 }

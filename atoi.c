@@ -5,7 +5,7 @@
 *@str: string to be converted
 *Return: the result of the conversion
 */
-int atoi(const char *str)
+int _atoi(const char *str)
 {
 	int result = 0, sign = 1;
 

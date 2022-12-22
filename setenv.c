@@ -9,7 +9,7 @@
 int _setenv(const char *name, const char *value, int overwrite)
 {
 	int size, result;
-	char var;
+	char *var;
 
 	if (!overwrite && getenv(name))
 		return (0);

@@ -14,7 +14,7 @@ char **split_line(char *str)
 
 	if (myStr == NULL)
 	{
-		write(2, "%s\n", "Unable to allocate space");
+		write(2, "Unable to allocate spac\ne", 25);
 		exit(EXIT_FAILURE);
 	}
 	token = _strtok(str, DELIMS);

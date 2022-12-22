@@ -22,7 +22,7 @@ int execute_line(char **args)
 		return (1);
 	for (i = 0; args[i]; i++)
 	{
-		if (_strcmp(args[i], setenv) == 0)
+		if (_strcmp(args[i], "setenv") == 0)
 			return (set_env(args));
 		else if (_strcmp(args[0], "unsetenv") == 0)
 			return (unset_env(args));

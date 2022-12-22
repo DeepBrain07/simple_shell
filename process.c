@@ -13,14 +13,14 @@ int start_process(char **args)
 
 	if (_path == NULL)
 	{
-		write(2, "%s\n", "Unable to allocate space");
+		write(2, "Unable to allocate space", 25);
 		exit(EXIT_FAILURE);
 	}
-	_path = _which(args[0]);
+//	_path = _which(args[0]);
 	pid = fork();
 	if (pid == 0)
 	{
-		cond = execv(_path, args);
+		cond = execvp(args[0], args);
 		if (cond == -1)
 			perror("sh");
 		exit(EXIT_FAILURE);

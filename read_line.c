@@ -12,7 +12,7 @@ char *read_line(void)
 	buf = malloc(sizeof(char) * bufsize);
 	if (buf == NULL)
 	{
-		write(2, "%s\n", "Unable to allocate memory");
+		write(2, "Unable to allocate memory", 25);
 		exit(EXIT_FAILURE);
 	}
 	c = getchar();

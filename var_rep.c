@@ -14,7 +14,7 @@ int var_rep(char **args)
 
 	if (buf3 == NULL || token == NULL)
 	{
-		write(2, "%s", "Unable to allocate space\n");
+		write(2, "Unable to allocate space\n", 25);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; args[i]; i++)
