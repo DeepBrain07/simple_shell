@@ -11,6 +11,11 @@ int or_sh(char **args)
 	char _path[1024] = {'/', 'b', 'i', 'n', '/'};
 	int i, j, k = 5, position = 0;
 
+	if (buf == NULL)
+	{
+		write(2, "%s\n", "Unable to allocate space");
+		exit(EXIT_FAILURE);
+	}
 	for (i = 0; args[i]; i++)
 	{
 		if (_strcmp(args[i], "||") == 0)
@@ -36,5 +41,6 @@ int or_sh(char **args)
 	buf[position] = NULL;
 	start_process(buf);
 
+	free(buf);
 	return (1);
 }
