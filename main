@@ -1,0 +1,7 @@
+#include "main.h"
+
+int main(void)
+{
+	printf("%s\n", _which("ls"));
+	return 1;
+}

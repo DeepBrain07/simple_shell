@@ -7,7 +7,7 @@
 */
 char *_which(const char *command)
 {
-	char *path = getenv("PATH");
+	char path[] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"; // getenv("PATH");
 
 	if (path == NULL)
 		return (NULL);
