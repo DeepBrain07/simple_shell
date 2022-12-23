@@ -35,5 +35,6 @@ char *_strcat(char *dest, const char *src);
 char *_strdup(const char *src);
 int _unsetenv(const char *name);
 int _putchar(int c);
+void write_int(int num);
 
 #endif

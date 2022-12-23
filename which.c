@@ -11,7 +11,7 @@ char *_which(const char *command)
 
 	if (path == NULL)
 		return (NULL);
-	char *dir = strtok(path, ":");
+	char *dir = _strtok(path, ":");
 
 	while (dir != NULL)
 	{
@@ -19,13 +19,13 @@ char *_which(const char *command)
 
 	if (full_path == NULL)
 		return (NULL);
-	strcpy(full_path, dir);
-	strcat(full_path, "/");
-	strcat(full_path, command);
+	_strcpy(full_path, dir);
+	_strcat(full_path, "/");
+	_strcat(full_path, command);
 
 	if (access(full_path, F_OK | X_OK) == 0)
 		return (full_path);
-	dir = strtok(NULL, ":");
+	dir = _strtok(NULL, ":");
 	}
 
 	return (NULL);

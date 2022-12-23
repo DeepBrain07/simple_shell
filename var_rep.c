@@ -7,7 +7,8 @@
 int var_rep(char **args)
 {
 	int i;
-	char buf[1024], buf2[1024];
+	char buf[1024];
+	char buf2[1024];
 	char *buf3 = malloc(sizeof(char) * 1024);
 	char **token = malloc(sizeof(char *) * 64);
 	pid_t mypid;
@@ -22,7 +23,8 @@ int var_rep(char **args)
 		if (args[i][0] == '$' && args[i][1] == '$' && !args[i][2])
 		{
 			mypid = getppid();
-			printf("%u\n", mypid);
+			write_int(mypid);
+			_putchar('\n');
 			return (1);
 		}
 		else if (args[i][0] == '$')
@@ -35,7 +37,7 @@ int var_rep(char **args)
 	{
 		for (i = 0; args[i]; i++)
 		{
-			if (strcmp(args[i], buf) == 0)
+			if (_strcmp(args[i], buf) == 0)
 				token[i] = buf3;
 			else
 				token[i] = args[i];

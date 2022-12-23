@@ -8,9 +8,8 @@
 int start_process(char **args)
 {
 	pid_t pid;
-	int  i, status, cond;
+	int  i, status, cond, status2 = 0;
 	char *_path = malloc(sizeof(char) * 1024);
-	char *environ[3] = {"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin_=/usr/bin/env", "PWD=/root/simple_shell", "PWD=/root/simple_shell"};
 
 	if (_path == NULL)
 	{
@@ -22,25 +21,23 @@ int start_process(char **args)
 	pid = fork();
 	if (pid == 0)
 	{
-//		_path = _which(args[0]);
-		printf("%s\n", _path);
-		cond = execve(_path, args, NULL);
+		for (i = 0; args[0][i]; i++)
+			if (args[0][i] == '/')
+			{
+				status2++;
+				cond = execve(args[0], args, NULL);
+				break;
+			}
+		if (status2 == 0)
+			cond = execve(_path, args, NULL);
 		if (cond == -1)
-		{
-			//for (i = 0; environ[i]; i++)
-			//	printf("%s\n", environ[0]);
-			//perror("sh");
-			printf("%s\n", _which(args[0]));
-		}
+			perror("sh");
 		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
 		perror("sh");
 	else
-	{/*
-		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status)); */
+	{
 		waitpid(pid, &status, 0);
 	}
 
