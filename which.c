@@ -7,11 +7,16 @@
 */
 char *_which(const char *command)
 {
-	char path[] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"; // getenv("PATH");
+	char *dir;
+	char path[] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin";
 
 	if (path == NULL)
 		return (NULL);
-	char *dir = _strtok(path, ":");
+	dir = malloc(sizeof(char) * 1024);
+	if (dir == NULL)
+		return (NULL);
+
+	dir = _strtok(path, ":");
 
 	while (dir != NULL)
 	{
