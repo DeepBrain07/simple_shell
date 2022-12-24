@@ -14,7 +14,7 @@ char *_which(const char *command);
 char *read_line(void);
 void loop(void);
 char **split_line(char *str);
-int start_process(char **args);
+int cmd_exec(char **args);
 int cd(char **args);
 int exit_process(char **args);
 int execute_line(char **args);

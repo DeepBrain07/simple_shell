@@ -40,7 +40,6 @@ int and_sh(char **args)
 	}
 	buf[position] = NULL;
 	start_process(buf);
-	free(buf);
 
 	return (1);
 }

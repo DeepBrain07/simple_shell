@@ -11,7 +11,7 @@ int _setenv(const char *name, const char *value, int overwrite)
 	int size, result;
 	char *var;
 
-	if (!overwrite && getenv(name))
+	if (!overwrite && _getenv(name))
 		return (0);
 	size = _strlen(name) + 1 + _strlen(value) + 1;
 	var = malloc(sizeof(char) * size);

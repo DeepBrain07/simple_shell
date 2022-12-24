@@ -20,7 +20,7 @@ char *_getenv(const char *name)
 
 		if (env_name == NULL || env_value == NULL)
 			continue;
-		if (strcmp(env_name, name) == 0)
+		if (_strcmp(env_name, name) == 0)
 			return (env_value);
 	}
 

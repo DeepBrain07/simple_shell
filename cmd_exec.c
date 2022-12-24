@@ -5,7 +5,7 @@
 *@args: array of strings
 *Return: 1 on success, else failure
 */
-int start_process(char **args)
+int cmd_exec(char **args)
 {
 	pid_t pid;
 	int  i, status, cond, status2 = 0;
