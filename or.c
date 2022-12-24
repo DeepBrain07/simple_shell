@@ -21,7 +21,7 @@ int or_sh(char **args)
 		if (_strcmp(args[i], "||") == 0)
 		{
 			buf[position] = NULL;
-			start_process(buf);
+			cmd_exec(buf);
 			for (j = 0; buf[0][j]; j++)
 			{
 				_path[k] = buf[0][j];
@@ -39,8 +39,7 @@ int or_sh(char **args)
 		}
 	}
 	buf[position] = NULL;
-	start_process(buf);
+	cmd_exec(buf);
 
-	free(buf);
 	return (1);
 }

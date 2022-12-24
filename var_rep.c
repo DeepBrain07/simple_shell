@@ -42,7 +42,7 @@ int var_rep(char **args)
 			else
 				token[i] = args[i];
 		}
-		return (start_process(token));
+		return (cmd_exec(token));
 	}
 	return (1);
 }

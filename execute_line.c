@@ -36,5 +36,5 @@ int execute_line(char **args)
 /*	for (i = 0; i < num_of_builtins(); i++)
 		if (_strcmp(args[0], builtins[i]) == 0)
 			return ((*builtin_func[i])(args));*/
-	return (start_process(args));
+	return (cmd_exec(args));
 }
